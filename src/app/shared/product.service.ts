@@ -22,6 +22,9 @@ export class ProductService {
   ]
   constructor() { }
 
+  getAllCategories(): string[] {
+    return ['电子商品1', '电子商品2', '电子商品3', '电子商品4', '电子商品5', '电子商品6'];
+  }
   getProducts(): Product[] {
     return this.products;
   }
