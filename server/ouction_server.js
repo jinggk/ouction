@@ -66,7 +66,7 @@ app.get('/api/product/:id', function (req, res) {
 app.get('/api/comment/:id', function (req, res) {
     res.json(comments.filter(function (comment) { return comment.id == req.params.id; }));
 });
-var server = app.listen(8001, "192.168.106.45", function () {
+var server = app.listen(8001, "localhost", function () {
     console.log('服务器已启动，地址是： http://localhost:8001');
 });
 var subscriptions = new Map();
