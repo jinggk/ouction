@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -42,7 +43,9 @@ const routeConfig: Routes = [
     RouterModule.forRoot(routeConfig),
     ReactiveFormsModule
   ],
-  providers: [ProductService, WebSocketService],
+  providers: [ProductService, WebSocketService,
+    /**此处引入的provide是更改地址的策略 */
+    { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
