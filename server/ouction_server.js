@@ -67,7 +67,7 @@ app.get('/api/comment/:id', function (req, res) {
     res.json(comments.filter(function (comment) { return comment.id == req.params.id; }));
 });
 var server = app.listen(8001, "192.168.106.45", function () {
-    console.log('服务器已启动，地址是： http://192.168.106.45:8001');
+    console.log('服务器已启动，地址是： http://localhost:8001');
 });
 var subscriptions = new Map();
 var wsServer = new ws_1.Server({ port: 8085 });
